@@ -1,29 +1,10 @@
-const farmAnimals = 'cow horse sheep pig chicken';
+const farmAnimals = "cow horse sheep pig chicken";
 
-const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+const [moo, neigh, baa, oink, cluck] = farmAnimals.split(" ");
 
-const muppet = {
-  muppetName: 'Miss Piggy',
-  color: 'pink',
-  song: 'Never Before, Never Again',
-  job: 'Cast member of The Muppet Show',
-  partner: 'Kermit'
-};
+const [bessie, , dolly, babe, little] = farmAnimals.split(" ");
 
-const nestedMuppet = {
-  nestedName: 'Kermit',
-  nestedColor: 'green',
-  album: {
-    theMuppetMovie: {
-      song1: 'Rainbow Connection',
-      song2: 'Moving Right Along',
-      song3: 'Never Before, Never Again',
-      song4: 'I Hope That Something Better Comes Along',
-    },
-  },
-  nestedJob: 'Host of The Muppet Show',
-  nestedPartner: 'Miss Piggy'
-};
+const [blackAndWhite, , black, pink] = farmAnimals.split(" ");
 
 // Strings
 
@@ -33,13 +14,46 @@ const nestedMuppet = {
 
 // 3. Little the chicken had to go back to the coop, so now we're left with three. Let's use color variables of blackAndWhite, black, and pink.
 
+const colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+
+const [red, orange, yellow, green, blue, indigo, violet] = colors;
+const [r, o, y, g, b, , v] = colors;
+const [, , , , , indg] = colors;
+
 // Arrays
 
 // 4. Use destructuring to assign appropriate variables using the color names.
 
 // 5. Some people have a really hard time picking out indigo, so let's leave that one out, using the first letter of each color as the variable names.
 
-// 6. But wait! Indigo is now feeling *super* left out. Let's only assign indigo using indg. 
+// 6. But wait! Indigo is now feeling *super* left out. Let's only assign indigo using indg.
+const muppet = {
+  muppetName: "Miss Piggy",
+  color: "pink",
+  song: "Never Before, Never Again",
+  job: "Cast member of The Muppet Show",
+  partner: "Kermit",
+};
+
+const { muppetName, color, song, job, partner } = muppet;
+
+const nestedMuppet = {
+  nestedName: "Kermit",
+  nestedColor: "green",
+  album: {
+    theMuppetMovie: {
+      song1: "Rainbow Connection",
+      song2: "Moving Right Along",
+      song3: "Never Before, Never Again",
+      song4: "I Hope That Something Better Comes Along",
+    },
+  },
+  nestedJob: "Host of The Muppet Show",
+  nestedPartner: "Miss Piggy",
+};
+
+const { song2, song4 } = nestedMuppet.album.theMuppetMovie;
+const { nestedJob, nestedPartner } = nestedMuppet;
 
 // Objects
 
